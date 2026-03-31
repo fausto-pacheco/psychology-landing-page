@@ -128,8 +128,19 @@ import aboutPhoto from '../assets/photos/consulting-room.jpeg';
   }
 
   @media (max-width: 900px) {
-    .about-grid { grid-template-columns: 1fr; }
-    .about-photo-wrap { max-width: 380px; }
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+    .about-photo-wrap {
+      max-width: 100%;
+      padding-top: 1.5rem;
+      padding-left: 1.5rem;
+    }
+    .about-photo-accent {
+      top: 0;
+      left: 0;
+    }
     .about-tag { display: none; }
   }
 

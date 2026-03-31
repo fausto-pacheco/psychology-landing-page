@@ -169,9 +169,23 @@ import heroPhoto from '../assets/photos/outside.jpeg';
     backdrop-filter: blur(4px);
   }
   @media (max-width: 900px) {
-    #hero { grid-template-columns: 1fr; }
-    .hero-text { max-width: 100%; justify-self: start; }
-    .hero-media { min-height: 55vw; }
+    #hero {
+      grid-template-columns: 1fr;
+      height: auto;
+    }
+    .hero-text {
+      max-width: 100%;
+      justify-self: start;
+      padding: 2.5rem clamp(1.25rem, 5vw, 3rem) !important;
+    }
+    .hero-media {
+      height: 72vw;
+      min-height: 260px;
+    }
+    .hero-badge {
+      bottom: 1rem;
+      left: 1rem;
+    }
   }
 
   .hero-badge strong {
