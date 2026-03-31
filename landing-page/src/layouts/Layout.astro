@@ -1,0 +1,124 @@
+---
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Stephania Medina Martínez — Psicóloga Clínica</title>
+    <meta name="description" content="Psicóloga clínica en Ciudad Valles, S.L.P. Atención psicoanalítica para adolescentes y adultos, presencial y en línea. Stephania Medina Martínez." />
+    <meta property="og:title" content="Stephania Medina Martínez — Psicóloga Clínica" />
+    <meta property="og:description" content="Atención psicológica clínica desde la orientación psicoanalítica en Ciudad Valles, S.L.P. Presencial y en línea." />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_MX" />
+    <meta name="theme-color" content="#2d6a5f" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  /* ─── TOKENS ─────────────────────────────────────────────── */
+  :root {
+    --cream:    #f7f4ef;
+    --offwhite: #fdfcfa;
+    --stone:    #e8e2d9;
+    --sand:     #c9bfaf;
+    --taupe:    #8c8070;
+    --charcoal: #2a2724;
+    --teal:     #2d6a5f;
+    --gap:      clamp(3rem, 7vw, 6rem);
+    --r: 2px;
+  }
+
+  /* ─── RESET ──────────────────────────────────────────────── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    background: var(--cream);
+    color: var(--charcoal);
+    overflow-x: hidden;
+  }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+
+  /* ─── TYPOGRAPHY ─────────────────────────────────────────── */
+  .serif { font-family: 'Cormorant Garamond', serif; }
+  h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 400; line-height: 1.1; }
+
+  /* ─── LAYOUT ─────────────────────────────────────────────── */
+  .container {
+    max-width: 1100px;
+    margin-inline: auto;
+    padding-inline: clamp(1.25rem, 5vw, 3rem);
+  }
+  section { padding-block: var(--gap); }
+
+  /* ─── UTILITIES ──────────────────────────────────────────── */
+  .label {
+    font-size: .65rem;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--taupe);
+  }
+  .divider {
+    width: 32px;
+    height: 1px;
+    background: var(--sand);
+    margin-block: 1.25rem;
+  }
+
+  /* ─── BUTTONS ────────────────────────────────────────────── */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    padding: .75rem 1.75rem;
+    font-family: 'Jost', sans-serif;
+    font-size: .8rem;
+    font-weight: 400;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    border: 1px solid var(--charcoal);
+    background: transparent;
+    color: var(--charcoal);
+    cursor: pointer;
+    transition: background .25s, color .25s;
+  }
+  .btn:hover { background: var(--charcoal); color: var(--cream); }
+  .btn-solid {
+    background: var(--teal);
+    color: var(--offwhite);
+    border-color: var(--teal);
+  }
+  .btn-solid:hover { background: #235249; border-color: #235249; }
+  .btn-wa {
+    display: inline-flex;
+    align-items: center;
+    gap: .6rem;
+    padding: .85rem 2rem;
+    background: #25d366;
+    color: #fff;
+    font-size: .8rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    font-family: 'Jost', sans-serif;
+    border-radius: var(--r);
+    transition: background .2s;
+  }
+  .btn-wa:hover { background: #1ebe5a; }
+  .btn-wa svg { flex-shrink: 0; }
+</style>

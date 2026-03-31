@@ -1,0 +1,187 @@
+---
+import { Image } from 'astro:assets';
+import heroPhoto from '../assets/photos/outside.jpeg';
+---
+
+<section id="hero">
+  <div class="hero-text container" style="padding-right: 3rem;">
+    <p class="hero-eyebrow">Atención psicológica individual · presencial &amp; en línea</p>
+    <h1 class="hero-title">
+      Un espacio<br />para <em>conocerte</em><br />a fondo.
+    </h1>
+    <p class="hero-desc">
+      Acompañamiento clínico desde la orientación psicoanalítica, dirigido a adolescentes
+      y adultos que buscan comprender sus emociones, sus patrones y su historia.
+    </p>
+    <div class="hero-actions">
+      <a
+        class="btn btn-solid"
+        href="https://wa.me/524441421150?text=Hola%2C+me+interesa+agendar+una+consulta."
+        target="_blank"
+      >
+        Agendar cita por WhatsApp
+      </a>
+      <a class="btn" href="#services">Ver servicios</a>
+    </div>
+  </div>
+
+  <div class="hero-media">
+    <Image src={heroPhoto} alt="Consultorio de Stephania Medina Martínez" />
+    <div class="hero-badge">
+      Reseñas Google
+      <strong>4.8 ★ · 58 opiniones</strong>
+    </div>
+  </div>
+</section>
+
+<style>
+  #hero {
+    height: 100svh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 72px;
+  }
+
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--gap) clamp(1.25rem, 5vw, 3rem) var(--gap) clamp(1.25rem, 5vw, 3rem);
+    max-width: 560px;
+    justify-self: end;
+  }
+
+  .hero-eyebrow {
+    font-size: .65rem;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--taupe);
+    margin-bottom: 1.5rem;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 28px;
+    height: 1px;
+    background: var(--sand);
+    vertical-align: middle;
+    margin-right: .75rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2.8rem, 5.5vw, 5rem);
+    line-height: 1.0;
+    color: var(--charcoal);
+    margin-bottom: 1.5rem;
+  }
+  .hero-title em { font-style: italic; color: var(--teal); }
+
+  .hero-desc {
+    font-size: .95rem;
+    line-height: 1.75;
+    color: var(--taupe);
+    max-width: 380px;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+  /* ── right column: image ── */
+  .hero-media {
+    position: relative;
+    overflow: hidden;
+    background: var(--stone);
+    min-height: 0;
+  }
+  .hero-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    filter: saturate(.85);
+  }
+  .hero-media::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(45, 106, 95, .18) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  /* ── placeholder (remove once real photo is added) ── */
+  .img-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .75rem;
+    background: var(--stone);
+    border: 1.5px dashed var(--sand);
+    color: var(--taupe);
+    text-align: center;
+    padding: 1.5rem;
+  }
+  .img-placeholder svg { width: 36px; height: 36px; opacity: .45; }
+  .img-placeholder .ph-label {
+    font-size: .65rem;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--taupe);
+    opacity: .8;
+  }
+  .img-placeholder .ph-desc {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--charcoal);
+    opacity: .5;
+    line-height: 1.4;
+  }
+
+  /* ── entrance animations ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero-text > * {
+    opacity: 0;
+    animation: fadeUp .7s ease forwards;
+  }
+  .hero-eyebrow { animation-delay: .1s; }
+  .hero-title   { animation-delay: .25s; }
+  .hero-desc    { animation-delay: .4s; }
+  .hero-actions { animation-delay: .55s; }
+
+  /* ── stats badge ── */
+  .hero-badge {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    background: var(--offwhite);
+    padding: 1rem 1.25rem;
+    font-size: .72rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--taupe);
+    border-left: 3px solid var(--teal);
+    backdrop-filter: blur(4px);
+  }
+  @media (max-width: 900px) {
+    #hero { grid-template-columns: 1fr; }
+    .hero-text { max-width: 100%; justify-self: start; }
+    .hero-media { min-height: 55vw; }
+  }
+
+  .hero-badge strong {
+    display: block;
+    font-size: 1.5rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    color: var(--charcoal);
+    letter-spacing: 0;
+    text-transform: none;
+    margin-top: .15rem;
+  }
+</style>

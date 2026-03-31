@@ -1,0 +1,63 @@
+---
+import { Image } from 'astro:assets';
+import photo1 from '../assets/photos/lobby.jpeg';
+import photo2 from '../assets/photos/sofa.jpeg';
+import photo3 from '../assets/photos/plants.jpeg';
+import photo4 from '../assets/photos/window.jpeg';
+---
+
+<section id="gallery">
+  <div class="photo-strip">
+    <div class="photo-strip-item">
+      <Image src={photo1} alt="Sala de espera del consultorio" />
+    </div>
+    <div class="photo-strip-item">
+      <Image src={photo2} alt="Sofá del consultorio" />
+    </div>
+    <div class="photo-strip-item">
+      <Image src={photo3} alt="Detalle decorativo del consultorio" />
+    </div>
+    <div class="photo-strip-item">
+      <Image src={photo4} alt="Ventana del consultorio" />
+    </div>
+  </div>
+</section>
+
+<style>
+  #gallery {
+    padding-block: 0;
+    overflow: hidden;
+  }
+
+  .photo-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    height: 380px;
+    gap: 1px;
+    background: var(--stone);
+  }
+
+  .photo-strip-item {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .photo-strip-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .4s ease;
+  }
+  .photo-strip-item:hover img { transform: scale(1.04); }
+
+  @media (max-width: 900px) {
+    .photo-strip { grid-template-columns: 1fr 1fr; height: auto; }
+    .photo-strip-item { height: 220px; }
+  }
+
+  @media (max-width: 540px) {
+    .photo-strip { grid-template-columns: 1fr; }
+    .photo-strip-item { height: 250px; }
+  }
+</style>

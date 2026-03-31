@@ -1,0 +1,142 @@
+---
+---
+
+<section id="testimonials">
+  <div class="container">
+    <div class="testimonials-header">
+      <div>
+        <p class="label" style="margin-bottom:.6rem;">Opiniones</p>
+        <h2>Lo que dicen<br /><em>los pacientes</em></h2>
+      </div>
+      <div class="google-badge">
+        <div>
+          <div><strong>4.8</strong> en Google</div>
+          <div class="stars">★★★★★</div>
+          <div style="margin-top:.2rem;">58 reseñas verificadas</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonials-grid">
+
+      <div class="testimonial-card">
+        <p class="testimonial-text">La mejor terapeuta que he tenido, es muy amable, comprensiva y atenta, el ambiente de la consulta es relajante y te hace despejar bastante la mente.</p>
+        <div class="testimonial-author">
+          Reseña de Google
+          <span>Paciente verificado</span>
+          <div class="t-stars">★★★★★</div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <p class="testimonial-text">¡Excelente! Muy profesional y realmente te hace sentir en un espacio seguro y confiable, recomiendo su trabajo ampliamente.</p>
+        <div class="testimonial-author">
+          Reseña de Google
+          <span>Paciente verificado</span>
+          <div class="t-stars">★★★★★</div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <p class="testimonial-text">Siendo sinceros es la mejor psicóloga que pueda haber, realiza su labor con mucho profesionalismo, la recomiendo en verdad... Excelente servicio.</p>
+        <div class="testimonial-author">
+          Reseña de Google
+          <span>Paciente verificado</span>
+          <div class="t-stars">★★★★★</div>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="disclaimer">
+      * Reseñas reales de Google Maps. Para ver todas las opiniones, <a href="https://goo.gl/maps/kUkumJQwMJPYA7oD9" target="_blank">visita el perfil</a>.
+    </p>
+  </div>
+</section>
+
+<style>
+  #testimonials {
+    background: var(--offwhite);
+    border-top: 1px solid var(--stone);
+  }
+
+  .testimonials-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .testimonials-header h2 { font-size: clamp(2rem, 3.5vw, 3rem); }
+
+  .google-badge {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    font-size: .78rem;
+    color: var(--taupe);
+  }
+  .google-badge strong {
+    color: var(--charcoal);
+    font-size: 1.1rem;
+    font-family: 'Cormorant Garamond', serif;
+  }
+  .stars { color: #e8a020; letter-spacing: .1em; font-size: 1rem; }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .testimonial-card {
+    border: 1px solid var(--stone);
+    padding: 2rem;
+    background: var(--cream);
+    position: relative;
+  }
+  .testimonial-card::before {
+    content: '\201C';
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 5rem;
+    color: var(--stone);
+    line-height: 1;
+    position: absolute;
+    top: .5rem;
+    left: 1.25rem;
+  }
+
+  .testimonial-text {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--taupe);
+    margin-top: 1.5rem;
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .testimonial-author {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--stone);
+    font-size: .72rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--charcoal);
+  }
+  .testimonial-author span { color: var(--taupe); display: block; margin-top: .2rem; }
+  .t-stars { color: #e8a020; font-size: .8rem; margin-top: .5rem; }
+
+  @media (max-width: 900px) {
+    .testimonials-grid { grid-template-columns: 1fr; }
+  }
+
+  .disclaimer {
+    margin-top: 2rem;
+    font-size: .78rem;
+    color: var(--taupe);
+    text-align: center;
+  }
+  .disclaimer a { color: var(--teal); text-decoration: underline; }
+</style>

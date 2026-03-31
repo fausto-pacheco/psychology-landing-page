@@ -1,0 +1,215 @@
+---
+import { Image } from 'astro:assets';
+import aboutPhoto from '../assets/photos/consulting-room.jpeg';
+---
+
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+
+      <div class="about-photo-wrap">
+        <div class="about-photo-accent"></div>
+        <Image class="about-photo" src={aboutPhoto} alt="Consultorio de Stephania Medina Martínez" />
+        <div class="about-tag">Desde 2017</div>
+      </div>
+
+      <div class="about-content">
+        <p class="label section-label">Acerca de mí</p>
+        <h2>Psicóloga Clínica<br /><em>con formación rigurosa</em></h2>
+        <div class="divider"></div>
+
+        <p>
+          Mi nombre es <strong>Lizzeth Stephania Medina Martínez</strong>. Ejerzo mi práctica
+          privada en Ciudad Valles, S.L.P., y ofrezco atención en línea para personas dentro y
+          fuera de México.
+        </p>
+        <p>
+          Soy egresada de la <strong>Licenciatura en Psicología</strong> por la UASLP y cuento
+          con <strong>Maestría en Clínica Psicoanalítica</strong> por la UAZ, donde me gradué
+          <strong>con honores</strong>. Desde 2017 me dedico a la práctica clínica con
+          adolescentes y adultos desde la orientación psicoanalítica.
+        </p>
+        <p>
+          Cuento con formación en <strong>Psicología Forense</strong> por la Academia
+          Internacional de Formación en Ciencias Forenses (AIFCF) en Ciudad de México.
+          Actualmente soy miembro activo de <strong>YOICA</strong>, red internacional de
+          psicoanalistas de Europa y Latinoamérica.
+        </p>
+
+        <div class="credentials-list">
+          <div class="credential-item">
+            <div class="credential-dot"></div>
+            <div class="credential-text">
+              Licenciatura en Psicología — UASLP
+              <span>Universidad Autónoma de San Luis Potosí</span>
+            </div>
+          </div>
+          <div class="credential-item">
+            <div class="credential-dot"></div>
+            <div class="credential-text">
+              Maestría en Clínica Psicoanalítica — UAZ · Graduada con honores
+              <span>Universidad Autónoma de Zacatecas</span>
+            </div>
+          </div>
+          <div class="credential-item">
+            <div class="credential-dot"></div>
+            <div class="credential-text">
+              Formación en Psicología Forense — AIFCF, Ciudad de México
+            </div>
+          </div>
+          <div class="credential-item">
+            <div class="credential-dot"></div>
+            <div class="credential-text">
+              Miembro activo de YOICA
+              <span>Red internacional de psicoanalistas, Europa y Latinoamérica</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cedulas">
+          Cédula profesional Licenciatura: <strong>10976717</strong> &nbsp;·&nbsp;
+          Cédula profesional Maestría: <strong>14300493</strong>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  #about {
+    background: var(--offwhite);
+    border-top: 1px solid var(--stone);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  /* ── left column: photo ── */
+  .about-photo-wrap { position: relative; }
+
+  .about-photo {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    object-position: center;
+    filter: saturate(.8);
+    display: block;
+  }
+
+  .about-photo-accent {
+    position: absolute;
+    top: -1.5rem;
+    left: -1.5rem;
+    width: 60%;
+    height: 60%;
+    border: 1px solid var(--sand);
+    z-index: -1;
+  }
+
+  .about-tag {
+    position: absolute;
+    bottom: 1.5rem;
+    right: -1.5rem;
+    background: var(--teal);
+    color: var(--offwhite);
+    padding: 1rem 1.25rem;
+    font-size: .7rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+  }
+
+  @media (max-width: 900px) {
+    .about-grid { grid-template-columns: 1fr; }
+    .about-photo-wrap { max-width: 380px; }
+    .about-tag { display: none; }
+  }
+
+  /* placeholder styles (shared with Hero, but scoped here) */
+  .img-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .75rem;
+    background: var(--stone);
+    border: 1.5px dashed var(--sand);
+    color: var(--taupe);
+    text-align: center;
+    padding: 1.5rem;
+  }
+  .img-placeholder svg { width: 36px; height: 36px; opacity: .45; }
+  .img-placeholder .ph-label {
+    font-size: .65rem;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--taupe);
+    opacity: .8;
+  }
+  .img-placeholder .ph-desc {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--charcoal);
+    opacity: .5;
+    line-height: 1.4;
+  }
+
+  /* ── right column: text ── */
+  .about-content { padding-top: 1rem; }
+  .section-label { margin-bottom: .75rem; }
+  .about-content h2 { font-size: clamp(2rem, 3.5vw, 3rem); margin-bottom: 1.5rem; }
+  .about-content p { font-size: .92rem; line-height: 1.8; color: var(--taupe); margin-bottom: 1rem; }
+  .about-content p strong { color: var(--charcoal); font-weight: 400; }
+
+  /* ── credentials ── */
+  .credentials-list {
+    margin-top: 2rem;
+    border-top: 1px solid var(--stone);
+    padding-top: 1.5rem;
+    display: grid;
+    gap: 1rem;
+  }
+  .credential-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  .credential-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--teal);
+    margin-top: .45rem;
+    flex-shrink: 0;
+  }
+  .credential-text { font-size: .85rem; line-height: 1.5; color: var(--charcoal); }
+  .credential-text span {
+    display: block;
+    font-size: .72rem;
+    color: var(--taupe);
+    margin-top: .15rem;
+    letter-spacing: .05em;
+  }
+
+  /* ── cédulas ── */
+  .cedulas {
+    margin-top: 1.5rem;
+    padding: 1rem 1.25rem;
+    background: var(--stone);
+    font-size: .75rem;
+    color: var(--taupe);
+    letter-spacing: .06em;
+    line-height: 2;
+  }
+</style>

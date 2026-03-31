@@ -1,0 +1,77 @@
+---
+---
+
+<nav>
+  <div class="nav-logo">
+    Stephania Medina Martínez
+    <span>Psicóloga Clínica · Ciudad Valles</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#about">Acerca de mí</a></li>
+    <li><a href="#services">Servicios</a></li>
+    <li><a href="#testimonials">Reseñas</a></li>
+    <li><a href="#contact">Contacto</a></li>
+  </ul>
+  <a class="nav-cta" href="https://wa.me/524441421150?text=Hola%2C+me+interesa+agendar+una+consulta." target="_blank">
+    Agendar cita
+  </a>
+</nav>
+
+<style>
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem clamp(1.25rem, 5vw, 3rem);
+    background: rgba(247, 244, 239, .92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--stone);
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: .06em;
+    line-height: 1.2;
+  }
+  .nav-logo span {
+    display: block;
+    font-size: .65rem;
+    font-family: 'Jost', sans-serif;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--taupe);
+    margin-top: .15rem;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+    font-size: .75rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+  }
+  .nav-links a { color: var(--taupe); transition: color .2s; }
+  .nav-links a:hover { color: var(--charcoal); }
+
+  .nav-cta {
+    font-size: .72rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    padding: .55rem 1.25rem;
+    background: var(--teal);
+    color: var(--offwhite);
+    border-radius: var(--r);
+    transition: background .2s;
+  }
+  .nav-cta:hover { background: #235249; }
+
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+  }
+</style>
