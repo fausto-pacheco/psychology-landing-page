@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import aboutPhoto from '../assets/photos/thesis.jpeg';
+import aboutPhoto from '../assets/photos/self-picture.jpeg';
 ---
 
 <section id="about">
@@ -9,7 +9,7 @@ import aboutPhoto from '../assets/photos/thesis.jpeg';
 
       <div class="about-photo-wrap">
         <div class="about-photo-accent"></div>
-        <Image class="about-photo" src={aboutPhoto} alt="Tésis de Stephania Medina Martínez" />
+        <Image class="about-photo" src={aboutPhoto} alt="Foto de psicóloga Stephania Medina Martínez" />
         <div class="about-tag">Desde 2017</div>
       </div>
 
@@ -67,8 +67,9 @@ import aboutPhoto from '../assets/photos/thesis.jpeg';
         </div>
 
         <div class="cedulas">
-          Cédula profesional Licenciatura: <strong>10976717</strong> &nbsp;·&nbsp;
-          Cédula profesional Maestría: <strong>14300493</strong>
+          <span>Cédula Licenciatura: <strong>10976717</strong></span>
+          <span>Cédula Maestría: <strong>14300493</strong></span>
+          <span>AIFCF: <strong>19771</strong></span>
         </div>
       </div>
 
@@ -221,6 +222,17 @@ import aboutPhoto from '../assets/photos/thesis.jpeg';
     font-size: .75rem;
     color: var(--taupe);
     letter-spacing: .06em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .25rem .75rem;
+  }
+  .cedulas span {
+    white-space: nowrap;
     line-height: 2;
+  }
+  .cedulas span:not(:last-child)::after {
+    content: '·';
+    margin-left: .75rem;
+    color: var(--sand);
   }
 </style>
